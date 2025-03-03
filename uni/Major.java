@@ -9,19 +9,19 @@ public class Major {
     final int maxCapacity;
     int numberOfStudents = 0;
 
-    public Major(String newName, int maxStudentNumber){
+    public Major(String newName, int maxStudentNumber) {
         name = newName;
         maxCapacity = maxStudentNumber;
 
-        if(majorlist == null)
+        if (majorlist == null)
             majorlist = new ArrayList<>();
 
-        this.majorID = majorlist.size();
+        this.majorID = majorlist.size() + 1;
         majorlist.add(this);
     }
 
-    public static Major findById(int ID){
-        if(majorlist != null) {
+    public static Major findById(int ID) {
+        if (majorlist != null) {
             for (Major major : majorlist) {
                 if (major.majorID == ID) {
                     return major;
@@ -31,11 +31,11 @@ public class Major {
         return null;
     }
 
-    public void addStudent(){
-        if(numberOfStudents <= maxCapacity)
-        numberOfStudents ++;
+    public void addStudent() {
+        if (numberOfStudents <= maxCapacity)
+            numberOfStudents++;
 
         else
-            System.out.println("Capacity is complete. you cant add anyone else.")
+            System.out.println("Capacity is complete. you cant add anyone else.");
     }
 }
