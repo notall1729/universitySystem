@@ -6,6 +6,36 @@ public class Major {
     int majorID;
     static ArrayList<Major> majorlist = null;
     String name;
-    final int maxCapacity = 50;
+    final int maxCapacity;
     int numberOfStudents = 0;
+
+    public Major(String newName, int maxStudentNumber){
+        name = newName;
+        maxCapacity = maxStudentNumber;
+
+        if(majorlist == null)
+            majorlist = new ArrayList<>();
+
+        this.majorID = majorlist.size();
+        majorlist.add(this);
+    }
+
+    public static Major findById(int ID){
+        if(majorlist != null) {
+            for (Major major : majorlist) {
+                if (major.majorID == ID) {
+                    return major;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void addStudent(){
+        if(numberOfStudents <= maxCapacity)
+        numberOfStudents ++;
+
+        else
+            System.out.println("Capacity is complete. you cant add anyone else.")
+    }
 }
