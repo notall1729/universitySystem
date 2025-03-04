@@ -24,7 +24,7 @@ public class Professor {
         if(professorList != null){
             for(Professor professor : professorList){
                 if(professor.professorID == ID){
-                    return Professor;
+                    return professor;
                 }
             }
         }

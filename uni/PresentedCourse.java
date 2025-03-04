@@ -3,19 +3,21 @@ package uni;
 import java.util.ArrayList;
 
 public class PresentedCourse {
-    int peresentedCourseID;
-    static ArrayList<PresentedCourse> presentedCourseList = null;
+    int presentedCourseID;
+    static ArrayList<PresentedCourse> presentedCourseList = new ArrayList<>();
     int courseID;
     int professorID;
     int maxCapacity;
-    ArrayList<Integer> studentIDList = null;
+    public ArrayList<Integer> studentIDList = new ArrayList<>();
 
-        public PresentedCourse(int newCourseID, int newProfessorID, int newMaxCapacity) {\
-            courseID = newCourseID;
-            professorID = newProfessorID;
-            maxCapacity = newMaxCapacity;
+        public PresentedCourse(int newCourseID, int newProfessorID, int newMaxCapacity) {
+            this.courseID = newCourseID;
+            this.professorID = newProfessorID;
+            this.maxCapacity = newMaxCapacity;
 
-            courseID = presentedCourseList.size();
+            this.presentedCourseID = presentedCourseList.size();
+
+            presentedCourseList.add(this);
         }
 
         public static PresentedCourse findById(int ID){
@@ -30,9 +32,13 @@ public class PresentedCourse {
     }
 
     public void addStudent(int newStudentID){
-            if(studentIDList.size() <= maxCapacity)
+            if(studentIDList.size() <  maxCapacity)
                 studentIDList.add(newStudentID);
 
-            else System.out.println("Capacity is complete. you cant add anyone else.")
+            else System.out.println("Capacity is complete. you cant add anyone else.");
+    }
+
+    public ArrayList<Integer> getStudentIDList(){
+            return studentIDList;
     }
 }

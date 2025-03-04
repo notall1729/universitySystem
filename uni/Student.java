@@ -30,6 +30,8 @@ public class Student {
     }
 
     public void setStudentCode(){
+        String studentCode = String.valueOf(entranceYear) + String.valueOf(majorID) + studentList.size();
+
 
     }
 }
