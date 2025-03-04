@@ -3,15 +3,15 @@ package uni;
 import java.util.ArrayList;
 
 public class Major {
-    int majorID;
+    public int majorID;
     static ArrayList<Major> majorlist = null;
     String name;
     final int maxCapacity;
     int numberOfStudents = 0;
 
-    public Major(String newName, int maxStudentNumber) {
-        name = newName;
-        maxCapacity = maxStudentNumber;
+    public Major(String name, int maxCapacity) {
+        this.name = name;
+        this.maxCapacity = maxCapacity;
 
         if (majorlist == null)
             majorlist = new ArrayList<>();

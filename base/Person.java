@@ -3,19 +3,19 @@ package base;
 import java.util.ArrayList;
 
 public class Person{
-    int personID;
+    public int personID;
     static ArrayList<Person> personList = null;
-    String name;
-    String nationalID;
+    public String name;
+    public String nationalID;
 
-    public Person(String newName, String newNationalID){
-      this.name = newName;
-      this.nationalID = newNationalID;
+    public Person(String name, String nationalID, int personID){
+      this.name = name;
+      this.nationalID = nationalID;
+      this.personID = personID;
 
       if(personList == null)
       personList = new ArrayList<>();
 
-      this.personID = personList.size() + 1;
       personList.add(this);
     }
 

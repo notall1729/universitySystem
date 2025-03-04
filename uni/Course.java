@@ -4,14 +4,14 @@ package uni;
 import java.util.ArrayList;
 
 public class Course {
-    int courseID;
+    public int courseID;
     static ArrayList<Course> courseList = null;
     String title;
     int units;
 
-    public Course( String newTitle, int newUnits){
-        title = newTitle;
-        units = newUnits;
+    public Course( String title, int units){
+        this.title = title;
+        this.units = units;
 
         if(courseList == null)
             courseList = new ArrayList<>();

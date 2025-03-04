@@ -7,14 +7,17 @@ public class Student {
     static ArrayList<Student> studentList = null;
     int personID;
     final int entranceYear;
-    int majorID;
+    static int majorID;
     String studentCode;
 
-    public Student(int newPersonID, int newEntranceYear, int majorID) {
-        personID = newPersonID;
-        entranceYear = newEntranceYear;
-        Major major = new Major();
-        major.addStudent();
+    public Student(int personID, int entranceYear, int majorID) {
+        this.personID = personID;
+        this.entranceYear = entranceYear;
+        this.majorID = majorID;
+
+        Major major = Major.findById(majorID);
+        setStudentCode();
+
     }
 
     public static Student findById(int ID) {
@@ -30,7 +33,7 @@ public class Student {
     }
 
     public void setStudentCode(){
-        String studentCode = String.valueOf(entranceYear) + String.valueOf(majorID) + studentList.size();
+        String studentCode = String.valueOf(entranceYear) + String.valueOf(majorID) + String.valueOf(personID);
 
 
     }

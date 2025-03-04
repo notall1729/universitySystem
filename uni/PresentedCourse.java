@@ -10,10 +10,10 @@ public class PresentedCourse {
     int maxCapacity;
     public ArrayList<Integer> studentIDList = new ArrayList<>();
 
-        public PresentedCourse(int newCourseID, int newProfessorID, int newMaxCapacity) {
-            this.courseID = newCourseID;
-            this.professorID = newProfessorID;
-            this.maxCapacity = newMaxCapacity;
+        public PresentedCourse(int courseID, int professorID, int maxCapacity) {
+            this.courseID = courseID;
+            this.professorID = professorID;
+            this.maxCapacity = maxCapacity;
 
             this.presentedCourseID = presentedCourseList.size();
 

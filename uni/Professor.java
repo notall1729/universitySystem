@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Professor {
     int professorID;
-    static ArrayList<Professor> professorList = null;
+    static ArrayList<Professor> professorList = new ArrayList<>();
     int personID;
     int majorID;
 
-    public Professor(int newPersonID, int newMajorID){
-        personID = newPersonID;
-        majorID = newMajorID;
+    public Professor(int personID, int majorID){
+        this.personID = personID;
+        this.majorID = majorID;
 
         if(professorList != null)
             professorList =  new ArrayList<>();
