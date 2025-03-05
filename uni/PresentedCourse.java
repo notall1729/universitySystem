@@ -3,7 +3,7 @@ package uni;
 import java.util.ArrayList;
 
 public class PresentedCourse {
-    int presentedCourseID;
+    public int presentedCourseID;
     static ArrayList<PresentedCourse> presentedCourseList = new ArrayList<>();
     int courseID;
     int professorID;
@@ -31,14 +31,15 @@ public class PresentedCourse {
             return null;
     }
 
-    public void addStudent(int newStudentID){
+    public void addStudent(int studentID){
             if(studentIDList.size() <  maxCapacity)
-                studentIDList.add(newStudentID);
+                studentIDList.add(studentID);
 
             else System.out.println("Capacity is complete. you cant add anyone else.");
     }
 
     public ArrayList<Integer> getStudentIDList(){
+
             return studentIDList;
     }
 }

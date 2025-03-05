@@ -2,11 +2,10 @@ package uni;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.SplittableRandom;
 
 public class Transcript {
     int studentID;
-    Map<Integer, Double> transcript;
+    public Map<Integer, Double> transcript;
 
     public Transcript(int studentID){
         this.studentID = studentID;
@@ -28,7 +27,7 @@ public class Transcript {
           }
       }
 
-    public double getGPA(Map <Integer, Integer> courseCredits){
+    public double getGPA(Map <Integer, Double> courseCredits){
      if(transcript.isEmpty())
          return 0.0;
 
@@ -37,7 +36,7 @@ public class Transcript {
 
      for(int courseID : transcript.keySet()){
          double grade = transcript.get(courseID);
-         int credits = courseCredits.getOrDefault(courseID, 0);
+         double credits = courseCredits.getOrDefault(courseID, 0.0);
          totalGradePoint += grade * credits;
          totalCredits += credits;
      }
@@ -49,6 +48,7 @@ public class Transcript {
     }
 
     public Map<Integer, Double> getTranscript(){
+
         return transcript;
     }
 }

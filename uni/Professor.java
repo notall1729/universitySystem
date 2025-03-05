@@ -3,7 +3,7 @@ package uni;
 import java.util.ArrayList;
 
 public class Professor {
-    int professorID;
+    public int professorID;
     static ArrayList<Professor> professorList = new ArrayList<>();
     int personID;
     int majorID;

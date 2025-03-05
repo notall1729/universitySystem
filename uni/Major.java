@@ -32,7 +32,7 @@ public class Major {
     }
 
     public void addStudent() {
-        if (numberOfStudents <= maxCapacity)
+        if (numberOfStudents < maxCapacity)
             numberOfStudents++;
 
         else
